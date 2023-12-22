@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: deployment
+
+spec:
+  selector: 
+    matchLabels:
+      app: basma
+  replicas: 3
+  template:
+    metadata: 
+      name: my-first-pod
+      labels:
+        app: basma
+
+    spec: 
+      containers:
+        - image: basma0/project
+          name: project
